@@ -1,0 +1,21 @@
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
+const mongoURI = process.env.LOCAL_DB_ADDRESS as string;
+
+mongoose
+  .connect(mongoURI)
+  .then(() => console.log("MongoDB 연결 성공"))
+  .catch((err) => console.error("MongoDB 연결 실패:", err));
+
+export default app;

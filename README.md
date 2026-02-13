@@ -67,9 +67,9 @@ Node.js와 Express 기반의 쇼핑몰 백엔드 API를 구현하는 학습용 �
 
 ### 🧰 개발 도구
 
-| 도구      | 설명                              |
-| --------- | --------------------------------- |
-| `nodemon` | 서버 변경 시 자동 재시작 (개발용) |
+| 도구          | 설명                                       |
+| ------------- | ------------------------------------------ |
+| `ts-node-dev` | TypeScript 실행 + 서버 변경 시 자동 재시작 |
 
 ---
 
@@ -82,21 +82,25 @@ npm init -y
 # 의존성 설치
 npm install express mongoose dotenv cors bcryptjs jsonwebtoken
 
-# 개발용 자동 재시작 도구 설치
-npm install -D nodemon
+# TypeScript 개발 환경 설치
+npm install -D typescript ts-node-dev @types/node @types/express @types/cors
 ```
 
 ```json
 "scripts": {
-  "dev": "nodemon app.js",
-  "start": "node app.js"
+  "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+  "build": "tsc",
+  "start": "node dist/server.js"
 }
 ```
 
 ```bash
-# 개발 모드 실행 (자동 재시작)
+# 개발 모드 실행 (TypeScript + 자동 재시작)
 npm run dev
 
-# 일반 실행
+# 빌드
+npm run build
+
+# 일반 실행 (빌드된 JS 실행)
 npm start
 ```

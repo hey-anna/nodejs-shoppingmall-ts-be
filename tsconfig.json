@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* 기본 설정 */
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* 타입 & 모듈 */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+
+    /* Node 환경 */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "types": ["node"],
+
+    /* 개발 편의 */
+    "sourceMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
