@@ -73,6 +73,28 @@ Node.js와 Express 기반의 쇼핑몰 백엔드 API를 구현하는 학습용 �
 
 ---
 
+## 📁 Project Structure
+
+```txt
+src/
+├─ app.ts                      # Express 설정 및 라우트 마운트
+├─ server.ts                   # 서버 시작점
+├─ config/
+│  ├─ env.ts                   # 환경 변수 설정
+│  ├─ db.ts                    # MongoDB 연결
+│  └─ cors.ts                  # CORS 설정
+├─ domain/                     # 도메인(업무) 단위 구조
+│  ├─ auth/                    # 인증 관련 기능
+│  ├─ user/                    # 사용자 관리
+│  ├─ product/                 # 상품 관리
+│  ├─ cart/                    # 장바구니 기능
+│  └─ order/                   # 주문 및 결제 처리
+├─ middlewares/                # 인증 및 권한 미들웨어
+├─ utils/                      # 공통 유틸 함수
+├─ constants/                  # 상수 정의
+└─ types/                      # TypeScript 타입 정의
+```
+
 ## 📜 설치 및 실행 명령어
 
 ```bash
