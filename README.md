@@ -95,6 +95,33 @@ src/
 └─ types/                      # TypeScript 타입 정의
 ```
 
+---
+
+## 🔗 API Endpoints
+
+### 🔐 Auth
+
+| Method | Endpoint           | Description |
+| ------ | ------------------ | ----------- |
+| POST   | `/api/auth/signup` | 회원가입    |
+| POST   | `/api/auth/login`  | 로그인      |
+| POST   | `/api/auth/logout` | 로그아웃    |
+
+---
+
+### 👤 User
+
+| Method | Endpoint         | Description    | Auth       |
+| ------ | ---------------- | -------------- | ---------- |
+| GET    | `/api/users/me`  | 내 정보 조회   | ✅         |
+| PATCH  | `/api/users/me`  | 내 정보 수정   | ✅         |
+| GET    | `/api/users`     | 유저 목록 조회 | ✅ (Admin) |
+| GET    | `/api/users/:id` | 특정 유저 조회 | ✅ (Admin) |
+
+---
+
+> 모든 보호된 API는 `Authorization: Bearer <token>` 헤더가 필요합니다.
+
 ## 📜 설치 및 실행 명령어
 
 ```bash
@@ -105,7 +132,7 @@ npm init -y
 npm install express mongoose dotenv cors bcryptjs jsonwebtoken
 
 # TypeScript 개발 환경 설치
-npm install -D typescript ts-node-dev @types/node @types/express @types/cors
+npm install -D typescript ts-node-dev @types/node @types/express @types/cors @types/jsonwebtoken
 ```
 
 ```json
